@@ -16,8 +16,6 @@ More specifically - the first file load will attempt to load the last file in th
 
 Its first argument leads to the last entry in the table. That should lead you to the actual table. Simply visually inspect where it starts and ends, it should be surrounded by zeroes.
 
-
-
 The following command will result in extracted files:
 
 ```batch
@@ -30,4 +28,11 @@ I've also included a ripped song that was unused in Crash Bash (from the early J
 
 You can play it either with a SF2+MIDI player (XMPlay, foobar2000, Falcosoft MIDI Player), or with Winamp (through MS Synth DLS) or through the PSF. PSF was created with the Davironica generic driver, so no looping on the PSF for now.
 
+To hear it ingame in the Warp Room, apply the following code (prefereably AFTER entering the game, not in the Demo Disc menu):
 
+```
+BETA MUSIC IN WARP ROOM
+80042FD8 1084
+80042FDC 5F90
+80042FDE 0002
+```
