@@ -4,6 +4,26 @@ This is a quickly-written utility to extract the data file from Crash Bash.
 
 Currently it only supports unpacking.
 
+## Usage
+
+```batch
+CrashBashEx InExeName InDataName OutFolder TableStart TableEnd
+```
+
+For example, for the July 26 demo (found on US Demo Disc 38), the table is located at the file offset 0x335A0 and ends at 0x343F0. This can be discovered through tools like IDA or Ghidra. 
+
+More specifically - the first file load will attempt to load the last file in the table, which is the code overlay with most of the game code. To find the loading function, look for a string like "load file start" and cross-reference its earliest call (should be close to main() ).
+
+Its first argument leads to the last entry in the table. That should lead you to the actual table. Simply visually inspect where it starts and ends, it should be surrounded by zeroes.
+
+
+
+The following command will result in extracted files:
+
+```batch
+CrashBashEx CRASHBSH.EXE CRASHBSH.DAT output 0x335A0 0x343F0
+```
+
 ## Extra
 
 I've also included a ripped song that was unused in Crash Bash (from the early July 26th demo).
